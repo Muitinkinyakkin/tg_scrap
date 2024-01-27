@@ -18,7 +18,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # telegram bot authorization token
-TOKEN = 'paste tg token' #wtf is a token?
+TOKEN = 'paste tg token' #tg token here
 
 # initialize list to store the scraped message
 scraped_messsages = []
