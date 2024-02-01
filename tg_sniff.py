@@ -1,8 +1,5 @@
-# This is a script to analyze then absorb data from tg. There are two scenarios for this:
-# 1. Scrap all data on a given channel for later analysis to find a keyword (i.e. chat about a 0day)
-# 2. Scrap only keywords related to the issue at hand (i.e. only search for dialogue on '0day' 'vuln' 'exploit')
-# Frankly, I think it's best to just suck up all data (1) over a period of time, then run the analysis (~1 week), save relevant data ,and wipe the rest to add more. 
-# Store any relevant containers on the cloud.
+# This is a script to scrap data from tg on a given channel for later analysis to find specific keywords (i.e. chat about insider threats)
+
 
 
 
@@ -18,7 +15,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # telegram bot authorization token
-TOKEN = 'paste tg token' #tg token here
+TOKEN = 'paste tg token' 
 
 # initialize list to store the scraped message
 scraped_messsages = []
@@ -30,7 +27,7 @@ scraped_messsages = []
 
 def search_messages(update, context):
     message_text = update.message.text.lower()
-    if any(keyword in message_text for keyword in ['critical','vuln','0day','zero day','exploit']):
+    if any(keyword in message_text for keyword in ['insider','I know someone','teller']):
         
         # collect relevant data
         author = update.message.from_user.username
